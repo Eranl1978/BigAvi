@@ -44,7 +44,7 @@
         <div class="hero__overlay" aria-hidden="true"></div>
         <div class="container hero__content">
           <p class="eyebrow">יום שישי בצומת האלה</p>
-          <h1 id="hero-title">הפינה של אבי הגדול</h1>
+          <h1 id="hero-title"><span>הפינה של אבי הגדול</span></h1>
           <p class="hero__lead">
             ג'חנון תימני אסלי, ממולאים, יפרח, חמוצי בית ועוד טעמים של בית
             שמחכים לכם כל שישי מ-9:00 עד 17:00.
@@ -220,6 +220,36 @@
       <a href="tel:0527501040">להתקשר</a>
       <a href="https://wa.me/972527501040" rel="noopener">וואטסאפ</a>
     </div>
+
+    <script>
+      (() => {
+        const title = document.querySelector(".hero h1");
+
+        if (!title) {
+          return;
+        }
+
+        const fitMobileTitle = () => {
+          title.style.fontSize = "";
+
+          if (!window.matchMedia("(max-width: 680px)").matches) {
+            return;
+          }
+
+          let size = Math.min(42, Math.max(30, window.innerWidth * 0.096));
+          title.style.fontSize = `${size}px`;
+
+          while (title.scrollWidth > title.clientWidth && size > 24) {
+            size -= 0.5;
+            title.style.fontSize = `${size}px`;
+          }
+        };
+
+        fitMobileTitle();
+        window.addEventListener("resize", fitMobileTitle, { passive: true });
+        window.addEventListener("orientationchange", fitMobileTitle, { passive: true });
+      })();
+    </script>
 
     <script type="application/ld+json">
       {
