@@ -2,6 +2,11 @@
 
 דף נחיתה סטטי לעסק של אבי בצומת האלה.
 
+## קישורים
+
+- אתר חי: https://eranl1978.github.io/BigAvi/
+- קוד המקור: https://github.com/Eranl1978/BigAvi
+
 ## מבנה
 
 - `public/index.html` - הדף הראשי
