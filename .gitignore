@@ -1,4 +1,6 @@
 .firebase/
 .netlify/
+.npm-cache/
+.tools/
 node_modules/
 dist/
